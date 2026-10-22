@@ -1,0 +1,41 @@
+@startuml
+class Author {
+ - String name
+ - ArrayList<Title> titles
+ + Author(String name)
+ + void addTitle(Title title)
+ + double calculateRoyalties()
+ + String getName()
+}
+
+abstract Title {
+- String title
+- String literatureType
+- static final double RATE = 0.067574
++ title (String title, String literatureType)
++ double calculateRoyalties()
+# double calculatePoints()
+# double convertLiteratureType()
+}
+
+class AudioBook {
+- int durationInMinutes
+- int copies
++ AudioBook(String title, String literatureType, int copies, int durationInMinutes)
+# double calculatePoints()
+}
+
+class PrintedBook {
+- int pages
+- int copies
++ PrintedBook(String title, String literatureType, int copies, int pages)
+# double calculatePoints()
+}
+
+Author <-- Title
+Title <-- AudioBook
+Title <-- PrintedBook
+
+
+
+@enduml
