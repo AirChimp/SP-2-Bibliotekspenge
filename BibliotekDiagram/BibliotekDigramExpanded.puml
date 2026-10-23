@@ -69,9 +69,9 @@ Title <-- PhysicalTitle
 Title <-- NetTitle
 PhysicalTitle <-- PrintedBook
 PhysicalTitle <-- AudioBook
-IAudioBook <-- AudioBook
+IAudioBook <.. AudioBook
 NetTitle <-- EAudioBook
 NetTitle <-- EBook
-IAudioBook <-- EAudioBook
+IAudioBook <.. EAudioBook
 
 @enduml
